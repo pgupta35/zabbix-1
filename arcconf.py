@@ -6,6 +6,7 @@
 # Matvey Marinin 2013
 #
 # Script to monitor Adaptec RAID controller status on VMWare ESXi hosts using Adaptec CIM Provider (arcconf)
+# Requires pywbem module
 #
 # Usage: python arcconf.py --host esx1 --user root --password <pwd> GETCONFIG 1 AL
 #
