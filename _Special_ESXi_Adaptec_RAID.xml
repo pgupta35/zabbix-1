@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>2.0</version>
+    <date>2013-08-07T06:11:25Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>_Special_ESXi_Adaptec_RAID</template>
+            <name>_Special_ESXi_Adaptec_RAID</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications/>
+            <items>
+                <item>
+                    <name>RAID status</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>arcconf.sh[&quot;{HOST.CONN}&quot;,&quot;1&quot;]</key>
+                    <delay>600</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>1</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications/>
+                    <valuemap/>
+                </item>
+            </items>
+            <discovery_rules/>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{_Special_ESXi_Adaptec_RAID:arcconf.sh[&quot;{HOST.CONN}&quot;,&quot;1&quot;].str(WARNING)}=1</expression>
+            <name>{HOST.NAME}: {ITEM.LASTVALUE1}</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description>Некритичная ошибка RAID Adaptec на ESXi&#13;
+В настоящее время это только статус &quot;Failed Stripes&quot;</description>
+            <type>0</type>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME}: {ITEM.LASTVALUE1}</name>
+                    <expression>{_Special_ESXi_Adaptec_RAID:arcconf.sh[&quot;{HOST.CONN}&quot;,&quot;1&quot;].str(CRITICAL)}=1</expression>
+                </dependency>
+            </dependencies>
+        </trigger>
+        <trigger>
+            <expression>{_Special_ESXi_Adaptec_RAID:arcconf.sh[&quot;{HOST.CONN}&quot;,&quot;1&quot;].str(CRITICAL)}=1</expression>
+            <name>{HOST.NAME}: {ITEM.LASTVALUE1}</name>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description>Критическая ошибка RAID Adaptec на ESXi</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+    </triggers>
+</zabbix_export>

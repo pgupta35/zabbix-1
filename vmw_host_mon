@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# VMWare vSphere host monitoring with Zabbix
+#
+# 2013 Matvey Marinin
+#
+# Usage:
+#   1) define discovery rule with key vmw_host_mon["{HOST.HOST}"]
+#   2) define prototype items with keys vmware.host.timediff[{#ID}]
+#
+# Parameters:
+#   $1 = vcenter name
+#   $2 = operation mode <discovery|data>
+#
+
+set -e
+
+. /etc/zabbix/externalscripts/vmw_mon.conf
+
+ERR_LOG=/var/cache/zabbix/vmw_host_mon
+
+START_TIME=$(date)
+if [[ $2 == 'discovery' ]]; then
+  /usr/bin/python /etc/zabbix/externalscripts/vmw_host_mon.py "$1" "$VC_USER" "$VC_PWD" discovery 2>>"$ERR_LOG"
+fi
+
+if [[ $2 == 'data' ]]; then
+  /usr/bin/python /etc/zabbix/externalscripts/vmw_host_mon.py "$1" "$VC_USER" "$VC_PWD" data 2>>"$ERR_LOG" | zabbix_sender -z 127.0.0.1 -I 127.0.0.1 -T -i - -v >>"$ERR_LOG" 2>&1
+fi
+echo "$1" "$2" "$START_TIME" - `date` >> "$ERR_LOG"
