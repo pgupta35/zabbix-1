@@ -13,9 +13,9 @@ FIRST=1
 ## read sd* exclude list from config file (don't need in most cases)
 BLACKLIST_CFG=$(readlink -f "$(dirname $0)/disk_lld.blacklist")
 if [[ -e "$BLACKLIST_CFG" ]] ; then
-  SLAVES=$(<"$BLACKLIST_CFG")
+  BLACKLIST=$(<"$BLACKLIST_CFG")
 else
-  SLAVES=
+  BLACKLIST=
 fi
 
 ## discover DM devices, output mpathX raw devices only (exclude partitions and LVM LV)
@@ -24,13 +24,14 @@ for d in /sys/block/dm-*; do
   DMNAME=$(cat $d/dm/name)
   DMUUID=$(cat $d/dm/uuid)
   NAME="$DMNAME"
-  if [[ -e "$d/slaves" ]] ; then 
-    SLAVES="$SLAVES $(echo $(ls $d/slaves))"
-  fi
 
   #NAME="${NAME} ($(echo $(for h in $d/holders/dm-*/dm/name; do if [[ -e $h ]] ; then cat $h; fi; done)))"
 
   if [[ "$DMUUID" =~ ^mpath-+* ]] ; then
+    if [[ -e "$d/slaves" ]] ; then 
+      BLACKLIST="$BLACKLIST $(echo $(ls $d/slaves))"
+    fi
+
     if ((FIRST)); then FIRST=0; else OUTPUT="${OUTPUT}, "; fi
     OUTPUT=${OUTPUT}'{"{#ID}":"'$ID'","{#NAME}":"'$NAME'"}'
   fi
@@ -40,9 +41,8 @@ done
 for d in /sys/block/sd*; do
   ID=$(basename $d)
   NAME="$ID"
-  if !(listcontains "$SLAVES" $ID); then
-#    NAME="${NAME} ($(echo $(for h in $d/holders/dm-*/dm/name; do if [[ -e $h ]] ; then cat $h; fi; done)))"
-  if ((FIRST)); then FIRST=0; else OUTPUT="${OUTPUT}, "; fi
+  if !(listcontains "$BLACKLIST" $ID); then
+    if ((FIRST)); then FIRST=0; else OUTPUT="${OUTPUT}, "; fi
     OUTPUT=${OUTPUT}'{"{#ID}":"'$ID'","{#NAME}":"'$ID'"}'
   fi
 done
