@@ -1,0 +1,49 @@
+#!/bin/bash
+#
+# XIV monitoring script for Zabbix
+#
+# 2013 Matvey Marinin
+#
+# Use with "_Special_XIV" Zabbix template
+# 
+# 1) Define LLD rule "XIV Pools" with external item xiv_mon["{HOST.HOST}","{HOST.CONN}","discovery"]
+# 2) Define prototype trapper items with keys:
+#     xiv.pool.hard_size[{#ID}]
+#     xiv1 xiv.pool.hard_size.left[{#ID}]
+#     xiv.pool.hard_size.pct[{#ID}]
+#     xiv.pool.hard_size[{#ID}]
+#     xiv.pool.hard_size.left[{#ID}]
+#     xiv.pool.hard_size.pct[{#ID}]
+#     xiv.pool.total_hard_size
+#     xiv.pool.total_hard_size_left
+#     xiv.pool.total_hard_size_pct
+#
+# 3) Define ordinary item "xiv_mon_getdata" with external check xiv_mon["{HOST.HOST}","{HOST.CONN}","data"]. It used to poll data
+#
+# Usage:
+#   xiv_mon <xiv_host> <xiv_mgmt_interface> <discovery|data>
+#
+#   $1 = XIV host name in Zabbix
+#   $2 = XIV management interface DNS name or IP address
+#   $3 = operation mode <discovery|data>
+#
+
+set -e
+
+. /etc/zabbix/externalscripts/xiv_mon.conf
+
+ERR_LOG=/var/cache/zabbix/xiv_mon
+
+PYTHON=/usr/bin/python
+#PYTHON=/usr/bin/pypy
+
+START_TIME=$(date)
+if [[ $3 == 'discovery' ]]; then
+  "$PYTHON" /etc/zabbix/externalscripts/xiv_mon.py "$1" "$2" "$XIV_USER" "$XIV_PWD" discovery 2>>"$ERR_LOG"
+fi
+
+if [[ $3 == 'data' ]]; then
+  "$PYTHON" /etc/zabbix/externalscripts/xiv_mon.py "$1" "$2" "$XIV_USER" "$XIV_PWD" data 2>>"$ERR_LOG" | zabbix_sender -z 127.0.0.1 -I 127.0.0.1 -T -i - >>"$ERR_LOG" 2>&1
+  echo $?
+fi
+echo "$1" "$3" "$START_TIME" - $(date) >> "$ERR_LOG"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2013-09-19T07:30:17Z</date>
+    <date>2013-10-29T09:05:00Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -62,123 +62,6 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Hard disk space left</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>1</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2021.77.1.1.1.6.0</snmp_oid>
-                    <key>custom.xiv.xivFreeSpaceHard</key>
-                    <delay>120</delay>
-                    <history>2</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>B</units>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1073741824</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>Остаток физического дискового пространства в Гб</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>XIV</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                </item>
-                <item>
-                    <name>Hard disk space utilization</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2021.77.1.1.1.4.0</snmp_oid>
-                    <key>custom.xiv.xivUtilizationHard</key>
-                    <delay>120</delay>
-                    <history>2</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units>%</units>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>Физически выделенное дисковое пространство</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>XIV</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                </item>
-                <item>
-                    <name>Soft disk space utilization</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2021.77.1.1.1.3.0</snmp_oid>
-                    <key>custom.xiv.xivUtilizationSoft</key>
-                    <delay>120</delay>
-                    <history>2</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units>%</units>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>Виртуальное дисковое пространство</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>XIV</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                </item>
-                <item>
                     <name>Status</name>
                     <type>1</type>
                     <snmp_community>public</snmp_community>
@@ -217,8 +100,341 @@
                     </applications>
                     <valuemap/>
                 </item>
+                <item>
+                    <name>XIV Hard size</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>xiv.pool.total_hard_size</key>
+                    <delay>0</delay>
+                    <history>1</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>b</units>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Общий объем физически занятого пространства на XIV</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>XIV</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>XIV Hard space free</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>xiv.pool.total_hard_size_left</key>
+                    <delay>0</delay>
+                    <history>1</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>b</units>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Общий объем оставшегося свободного физического пространства на XIV</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>XIV</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>XIV Hard usage</name>
+                    <type>2</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>xiv.pool.total_hard_size_pct</key>
+                    <delay>0</delay>
+                    <history>1</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>%</units>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Процент использования физического пространства на XIV</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>XIV</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>xiv_mon_getdata</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>xiv_mon[&quot;{HOST.HOST}&quot;,&quot;{HOST.CONN}&quot;,&quot;data&quot;]</key>
+                    <delay>120</delay>
+                    <history>1</history>
+                    <trends>2</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Служебный элемент. дергающий скрипт xiv_mon для закачки данных в trapper items xiv.pool.xxx.&#13;
+Значение = код возврата скрипта ($?)</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>XIV</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
             </items>
-            <discovery_rules/>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>XIV pools</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>xiv_mon[&quot;{HOST.HOST}&quot;,&quot;{HOST.CONN}&quot;,&quot;discovery&quot;]</key>
+                    <delay>600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>:</filter>
+                    <lifetime>1</lifetime>
+                    <description/>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Pool {#NAME}: Hard size</name>
+                            <type>2</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>xiv.pool.hard_size[{#ID}]</key>
+                            <delay>0</delay>
+                            <history>1</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>b</units>
+                            <delta>0</delta>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>XIV</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Pool {#NAME}: Hard space free</name>
+                            <type>2</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>xiv.pool.hard_size.left[{#ID}]</key>
+                            <delay>0</delay>
+                            <history>1</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>b</units>
+                            <delta>0</delta>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>XIV</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Pool {#NAME}: Hard usage</name>
+                            <type>2</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>xiv.pool.hard_size.pct[{#ID}]</key>
+                            <delay>0</delay>
+                            <history>1</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>0</value_type>
+                            <allowed_hosts/>
+                            <units>%</units>
+                            <delta>0</delta>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>XIV</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{_Special_XIV:xiv.pool.hard_size.pct[{#ID}].avg(15m)}&gt;90</expression>
+                            <name>{HOST.NAME}: Pool {#NAME}: Critical usage ({ITEM.VALUE1})</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{_Special_XIV:xiv.pool.hard_size.pct[{#ID}].avg(15m)}&gt;85 &amp; {_Special_XIV:xiv.pool.hard_size.pct[{#ID}].avg(15m)}&lt;91</expression>
+                            <name>{HOST.NAME}: Pool {#NAME}: High usage ({ITEM.VALUE1})</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{_Special_XIV:xiv.pool.hard_size.left[{#ID}].avg(15m)}&lt;2T</expression>
+                            <name>{HOST.NAME}: Pool {#NAME}: {ITEM.VALUE1} free</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                </discovery_rule>
+            </discovery_rules>
             <macros/>
             <templates/>
             <screens/>
@@ -226,22 +442,37 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{_Special_XIV:custom.xiv.xivFreeSpaceHard.avg(5m)}&lt;2T</expression>
-            <name>{HOST.NAME}: Critical disk space left ({ITEM.LASTVALUE1})</name>
+            <expression>{_Special_XIV:xiv.pool.total_hard_size_pct.avg(15m)}&gt;95</expression>
+            <name>{HOST.NAME}: Critical space usage ({ITEM.VALUE1})</name>
             <url/>
             <status>0</status>
-            <priority>5</priority>
-            <description>Осталось меньше 2Тб свободного места</description>
+            <priority>4</priority>
+            <description>Высокий процент использования дискового пространства на XIV</description>
             <type>0</type>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{_Special_XIV:custom.xiv.xivUtilizationHard.avg(5m)}&gt;90</expression>
-            <name>{HOST.NAME}: High storage space utilization ({ITEM.LASTVALUE1})</name>
+            <expression>{_Special_XIV:xiv.pool.total_hard_size_pct.avg(15m)}&gt;85</expression>
+            <name>{HOST.NAME}: High space usage ({ITEM.VALUE1})</name>
             <url/>
             <status>0</status>
-            <priority>4</priority>
-            <description>Физически выделенное место больше 90%</description>
+            <priority>3</priority>
+            <description>Высокий процент использования дискового пространства на XIV</description>
+            <type>0</type>
+            <dependencies>
+                <dependency>
+                    <name>{HOST.NAME}: Critical space usage ({ITEM.VALUE1})</name>
+                    <expression>{_Special_XIV:xiv.pool.total_hard_size_pct.avg(15m)}&gt;95</expression>
+                </dependency>
+            </dependencies>
+        </trigger>
+        <trigger>
+            <expression>{_Special_XIV:xiv.pool.total_hard_size_left.avg(15m)}&lt;2T</expression>
+            <name>{HOST.NAME}: No free space left: {ITEM.VALUE1}</name>
+            <url/>
+            <status>0</status>
+            <priority>5</priority>
+            <description>Мало свободного места на XIV</description>
             <type>0</type>
             <dependencies/>
         </trigger>
