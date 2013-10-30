@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2013-06-05T17:48:06Z</date>
+    <date>2013-10-30T08:51:05Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -18,49 +18,13 @@
             </groups>
             <applications>
                 <application>
+                    <name>availability</name>
+                </application>
+                <application>
                     <name>Bladecenter</name>
                 </application>
             </applications>
             <items>
-                <item>
-                    <name>Bladecenter - Blade 1 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 1]</snmp_oid>
-                    <key>custom.bladecenter.blade1.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                </item>
                 <item>
                     <name>Bladecenter - Blade 1 Status</name>
                     <type>1</type>
@@ -68,9 +32,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.1</snmp_oid>
                     <key>custom.bladecenter.blade1.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -101,45 +65,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 2 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 2]</snmp_oid>
-                    <key>custom.bladecenter.blade2.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 2 Status</name>
@@ -148,9 +73,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.2</snmp_oid>
                     <key>custom.bladecenter.blade2.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -181,45 +106,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 3 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 3]</snmp_oid>
-                    <key>custom.bladecenter.blade3.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 3 Status</name>
@@ -228,9 +114,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.3</snmp_oid>
                     <key>custom.bladecenter.blade3.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -261,45 +147,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 4 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 4]</snmp_oid>
-                    <key>custom.bladecenter.blade4.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 4 Status</name>
@@ -308,9 +155,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.4</snmp_oid>
                     <key>custom.bladecenter.blade4.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -341,45 +188,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 5 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 5]</snmp_oid>
-                    <key>custom.bladecenter.blade5.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 5 Status</name>
@@ -388,9 +196,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.5</snmp_oid>
                     <key>custom.bladecenter.blade5.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -421,45 +229,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 6 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 6]</snmp_oid>
-                    <key>custom.bladecenter.blade6.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 6 Status</name>
@@ -468,9 +237,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.6</snmp_oid>
                     <key>custom.bladecenter.blade6.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -501,45 +270,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 7 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 7]</snmp_oid>
-                    <key>custom.bladecenter.blade7.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 7 Status</name>
@@ -548,9 +278,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.7</snmp_oid>
                     <key>custom.bladecenter.blade7.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -581,45 +311,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 8 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 8]</snmp_oid>
-                    <key>custom.bladecenter.blade8.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 8 Status</name>
@@ -628,9 +319,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.8</snmp_oid>
                     <key>custom.bladecenter.blade8.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -661,45 +352,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 9 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 9]</snmp_oid>
-                    <key>custom.bladecenter.blade9.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 9 Status</name>
@@ -708,9 +360,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.9</snmp_oid>
                     <key>custom.bladecenter.blade9.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -741,45 +393,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 10 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 10]</snmp_oid>
-                    <key>custom.bladecenter.blade10.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 10 Status</name>
@@ -788,9 +401,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.10</snmp_oid>
                     <key>custom.bladecenter.blade10.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -821,45 +434,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 11 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 11]</snmp_oid>
-                    <key>custom.bladecenter.blade11.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 11 Status</name>
@@ -868,9 +442,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.11</snmp_oid>
                     <key>custom.bladecenter.blade11.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -901,45 +475,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 12 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 12]</snmp_oid>
-                    <key>custom.bladecenter.blade12.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 12 Status</name>
@@ -948,9 +483,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.12</snmp_oid>
                     <key>custom.bladecenter.blade12.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -981,45 +516,6 @@
                     <valuemap>
                         <name>Bladecenter - Blade Status</name>
                     </valuemap>
-                </item>
-                <item>
-                    <name>Bladecenter - Blade 13 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 13]</snmp_oid>
-                    <key>custom.bladecenter.blade13.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
                 </item>
                 <item>
                     <name>Bladecenter - Blade 13 Status</name>
@@ -1028,9 +524,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.13</snmp_oid>
                     <key>custom.bladecenter.blade13.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1063,54 +559,15 @@
                     </valuemap>
                 </item>
                 <item>
-                    <name>Bladecenter - Blade 14 Health Summary</name>
-                    <type>1</type>
-                    <snmp_community>public</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.4[&quot;index&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.22.1.5.2.1.2&quot;, 14]</snmp_oid>
-                    <key>custom.bladecenter.blade14.health_summary</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
-                    <status>0</status>
-                    <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Bladecenter</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                </item>
-                <item>
                     <name>Bladecenter - Blade 14 Status</name>
                     <type>1</type>
                     <snmp_community>public</snmp_community>
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.22.1.5.1.1.5.14</snmp_oid>
                     <key>custom.bladecenter.blade14.status</key>
-                    <delay>300</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>14</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1149,8 +606,8 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>.1.3.6.1.4.1.2.3.51.2.2.8.1.1.0</snmp_oid>
                     <key>custom.bladecenter.faultled</key>
-                    <delay>180</delay>
-                    <history>30</history>
+                    <delay>120</delay>
+                    <history>7</history>
                     <trends>30</trends>
                     <status>0</status>
                     <value_type>3</value_type>
@@ -1190,9 +647,9 @@
                     <multiplier>0</multiplier>
                     <snmp_oid>1.3.6.1.4.1.2.3.51.2.2.7.1.0</snmp_oid>
                     <key>custom.bladecenter.systemhealth</key>
-                    <delay>180</delay>
-                    <history>30</history>
-                    <trends>30</trends>
+                    <delay>120</delay>
+                    <history>7</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1225,294 +682,259 @@
                     </valuemap>
                 </item>
             </items>
-            <discovery_rules/>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>fuelGauge</name>
+                    <type>1</type>
+                    <snmp_community>public</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.2.10.1.1.1.1</snmp_oid>
+                    <key>custom.bladecenter.fuelGauge.discovery</key>
+                    <delay>60</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>:</filter>
+                    <lifetime>7</lifetime>
+                    <description>Обход таблицы CME-MIB::fuelGaugeTable</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Bladecenter - Power usage (domain {#SNMPINDEX})</name>
+                            <type>10</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>snmp_num[&quot;{HOST.CONN}&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.2.10.1.1.1.10.{#SNMPINDEX}&quot;]</key>
+                            <delay>120</delay>
+                            <history>30</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>Watt</units>
+                            <delta>0</delta>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Опрос CME-MIB::fuelGaugePowerInUsed с конвертацией строкового значения STRING: &quot;934W&quot; в число</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Bladecenter</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes/>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Power Usage (domain {#SNMPINDEX})</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>1</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>1</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>0</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>FF9900</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>_Special_Bladecenter_SNMP</host>
+                                        <key>snmp_num[&quot;{HOST.CONN}&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.2.10.1.1.1.10.{#SNMPINDEX}&quot;]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>systemHealth</name>
+                    <type>1</type>
+                    <snmp_community>public</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.2.3.51.2.2.7.2.1.1</snmp_oid>
+                    <key>custom.bladecenter.systemHealthSummary.discovery</key>
+                    <delay>60</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>:</filter>
+                    <lifetime>0</lifetime>
+                    <description/>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>systemHealthSummaryDescription[{#SNMPINDEX}]</name>
+                            <type>10</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>snmp_hex_string[&quot;{HOST.CONN}&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.2.7.2.1.3.{#SNMPVALUE}&quot;]</key>
+                            <delay>60</delay>
+                            <history>1</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Bladecenter</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>systemHealthSummarySeverity[{#SNMPINDEX}]</name>
+                            <type>1</type>
+                            <snmp_community>public</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.2.3.51.2.2.7.2.1.2.{#SNMPVALUE}</snmp_oid>
+                            <key>systemHealthSummarySeverity[{#SNMPINDEX}]</key>
+                            <delay>60</delay>
+                            <history>1</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Bladecenter</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{_Special_Bladecenter_SNMP:systemHealthSummarySeverity[{#SNMPINDEX}].str(Critical)}=1 &amp; {_Special_Bladecenter_SNMP:snmp_hex_string[&quot;{HOST.CONN}&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.2.7.2.1.3.{#SNMPVALUE}&quot;].strlen(0)}&gt;0</expression>
+                            <name>{HOST.NAME}: {ITEM.LASTVALUE2}</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{_Special_Bladecenter_SNMP:systemHealthSummarySeverity[{#SNMPINDEX}].str(Warning)}=1 &amp; {_Special_Bladecenter_SNMP:snmp_hex_string[&quot;{HOST.CONN}&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.2.7.2.1.3.{#SNMPVALUE}&quot;].strlen(0)}&gt;0</expression>
+                            <name>{HOST.NAME}: {ITEM.LASTVALUE2}</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{_Special_Bladecenter_SNMP:systemHealthSummarySeverity[{#SNMPINDEX}].str(Critical)}=0 &amp; {_Special_Bladecenter_SNMP:systemHealthSummarySeverity[{#SNMPINDEX}].str(Warning)}=0 &amp;  {_Special_Bladecenter_SNMP:systemHealthSummarySeverity[{#SNMPINDEX}].str(Good)}=0 &amp; {_Special_Bladecenter_SNMP:snmp_hex_string[&quot;{HOST.CONN}&quot;,&quot;.1.3.6.1.4.1.2.3.51.2.2.7.2.1.3.{#SNMPVALUE}&quot;].strlen(0)}&gt;0</expression>
+                            <name>{HOST.NAME}: {ITEM.LASTVALUE3}</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>0</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                </discovery_rule>
+            </discovery_rules>
             <macros/>
-            <templates/>
+            <templates>
+                <template>
+                    <name>_Primary_Ping_High</name>
+                </template>
+                <template>
+                    <name>_Special_Bladecenter_Temperature</name>
+                </template>
+            </templates>
             <screens/>
         </template>
     </templates>
     <triggers>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade1.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade1.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade1.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 1: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade1.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade1.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade1.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 1: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade2.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade2.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade2.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 2: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade2.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade2.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade2.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 2: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade3.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade3.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade3.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 3: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade3.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade3.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade3.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 3: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade4.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade4.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade4.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 4: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade4.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade4.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade4.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 4: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade5.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade5.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade5.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 5: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade5.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade5.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade5.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 5: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade6.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade6.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade6.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 6: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade6.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade6.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade6.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 6: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade7.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade7.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade7.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 7: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade7.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade7.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade7.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 7: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade8.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade8.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade8.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 8: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade8.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade8.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade8.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 8: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade9.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade9.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade9.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 9: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade9.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade9.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade9.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 9: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade10.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade10.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade10.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 10: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade10.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade10.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade10.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 10: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade11.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade11.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade11.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 11: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade11.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade11.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade11.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 11: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade12.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade12.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade12.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 12: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description>Status 2 = Warning&#13;
-Status 5 = Discovering</description>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade12.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade12.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade12.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 12: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade13.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade13.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade13.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 13: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade13.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade13.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade13.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 13: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade14.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade14.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade14.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 14: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade14.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade14.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade14.health_summary.strlen(0)}&gt;0</expression>
-            <name>Blade 14: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
         <trigger>
             <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.faultled.last(0)}=1</expression>
             <name>Bladecenter Fault LED is ON on {HOST.NAME}</name>
@@ -1537,120 +959,7 @@ Status 5 = Discovering</description>
             <priority>3</priority>
             <description>Check Bladecenter AMM console</description>
             <type>0</type>
-            <dependencies>
-                <dependency>
-                    <name>Blade 6: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade6.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade6.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade6.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 1: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade1.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade1.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade1.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 2: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade2.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade2.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade2.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 3: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade3.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade3.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade3.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 4: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade4.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade4.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade4.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 5: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade5.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade5.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade5.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 7: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade7.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade7.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade7.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 8: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade8.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade8.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade8.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 9: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade9.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade9.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade9.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 10: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade10.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade10.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade10.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 11: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade11.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade11.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade11.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 12: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade12.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade12.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade12.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 13: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade13.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade13.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade13.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 14: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.blade14.status.last(0)}&gt;2 &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade14.status.last(0)}#5 &amp;  {_Special_Bladecenter_SNMP:custom.bladecenter.blade14.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 12: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade12.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade12.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade12.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 1: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade1.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade1.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade1.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 2: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade2.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade2.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade2.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 3: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade3.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade3.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade3.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 4: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade4.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade4.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade4.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 5: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade5.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade5.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade5.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 6: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade6.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade6.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade6.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 7: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade7.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade7.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade7.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 8: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade8.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade8.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade8.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 9: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade9.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade9.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade9.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 10: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade10.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade10.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade10.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 11: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade11.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade11.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade11.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 13: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade13.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade13.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade13.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-                <dependency>
-                    <name>Blade 14: {ITEM.LASTVALUE1} - {ITEM.LASTVALUE3}</name>
-                    <expression>({_Special_Bladecenter_SNMP:custom.bladecenter.blade14.status.last(0)}=2 | {_Special_Bladecenter_SNMP:custom.bladecenter.blade14.status.last(0)}=5 ) &amp; {_Special_Bladecenter_SNMP:custom.bladecenter.blade14.health_summary.strlen(0)}&gt;0</expression>
-                </dependency>
-            </dependencies>
+            <dependencies/>
         </trigger>
         <trigger>
             <expression>{_Special_Bladecenter_SNMP:custom.bladecenter.systemhealth.nodata(3600)}=1</expression>
@@ -1659,6 +968,21 @@ Status 5 = Discovering</description>
             <status>0</status>
             <priority>2</priority>
             <description/>
+            <type>0</type>
+            <dependencies>
+                <dependency>
+                    <name>{HOSTNAME} unavailable</name>
+                    <expression>{_Special_Bladecenter_SNMP:icmppingsec.avg(60)}=0</expression>
+                </dependency>
+            </dependencies>
+        </trigger>
+        <trigger>
+            <expression>{_Special_Bladecenter_SNMP:icmppingsec.min(1800)}&gt;0.2</expression>
+            <name>Time of ping to {HOSTNAME} is too much ({ITEM.LASTVALUE} sec)</name>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description>Время прохождения пакета до АТС слишком велико.</description>
             <type>0</type>
             <dependencies/>
         </trigger>
