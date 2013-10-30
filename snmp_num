@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Script to convert SNMP string value to number (ex. CME-MIB::fuelGaugePowerInUsed STRING: "934W" -> 934)
+# 
+# Marinin MV 2013
+#
+
+SNMP_TIMEOUT=15 #must be less that Zabbix server timeout
+SNMP_COMMUNITY=public
+SNMP_HOST=$1
+SNMP_OID=$2
+
+START_TIME=$(date)
+
+#get snmp value
+SNMP_OUTPUT=$(snmpget -v1 -c "$SNMP_COMMUNITY" -r 1 -t "$SNMP_TIMEOUT" -Oqvn -Ped "$SNMP_HOST" "$SNMP_OID" 2>>/var/cache/zabbix/snmp_num.log)
+
+##debug
+#echo "$START_TIME" "$(date)" "$SNMP_HOST" "$SNMP_OID" "$SNMP_OUTPUT" >> /var/cache/zabbix/snmp_num.log
+
+#filter out digits
+echo "$SNMP_OUTPUT" | sed 's/[^0-9]*//g'
