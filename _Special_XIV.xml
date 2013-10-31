@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2013-10-29T09:05:00Z</date>
+    <date>2013-10-31T08:47:57Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -224,7 +224,7 @@
                     <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>xiv_mon[&quot;{HOST.HOST}&quot;,&quot;{HOST.CONN}&quot;,&quot;data&quot;]</key>
-                    <delay>120</delay>
+                    <delay>300</delay>
                     <history>1</history>
                     <trends>2</trends>
                     <status>0</status>
@@ -265,7 +265,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>xiv_mon[&quot;{HOST.HOST}&quot;,&quot;{HOST.CONN}&quot;,&quot;discovery&quot;]</key>
-                    <delay>600</delay>
+                    <delay>1200</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_securityname/>
@@ -473,6 +473,26 @@
             <status>0</status>
             <priority>5</priority>
             <description>Мало свободного места на XIV</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{_Special_XIV:custom.xiv.xivMachineStatus.nodata(1h)}=1</expression>
+            <name>{HOST.NAME}: No xivMachineStatus data, check SNMP access</name>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{_Special_XIV:xiv_mon[&quot;{HOST.HOST}&quot;,&quot;{HOST.CONN}&quot;,&quot;data&quot;].max(15m)}&gt;0</expression>
+            <name>{HOST.NAME}: XIV monitoring errors (xiv_mon_getdata = {ITEM.VALUE1}), check &quot;xiv_mon&quot; script</name>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
             <type>0</type>
             <dependencies/>
         </trigger>
