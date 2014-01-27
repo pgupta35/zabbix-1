@@ -13,22 +13,23 @@ from pysphere.resources import VimService_services as VI
 from pysphere.ZSI import FaultException as ZSI_FaultException
 
 def usage():
-  print >> sys.stderr, "Usage: vmw_host_mon.py <vcenter> <vc_user> <vc_password> <discovery|data>"
+  print >> sys.stderr, "Usage: vmw_host_mon.py <vcenter_zabbix_host> <vcenter_dns_name> <vc_user> <vc_password> <discovery|time|status>"
 
 #print sys.argv
 
-if len(sys.argv) != 5:
+if len(sys.argv) != 6:
   print >> sys.stderr, 'ERROR: wrong args'
   usage()
   sys.exit(2)
 
-vcenter = sys.argv[1]
-user = sys.argv[2]
-password = sys.argv[3]
-mode = sys.argv[4]
+vcenter_host = sys.argv[1]
+vcenter_dns = sys.argv[2]
+user = sys.argv[3]
+password = sys.argv[4]
+mode = sys.argv[5]
 
 server = VIServer()
-server.connect(vcenter, user, password)
+server.connect(vcenter_dns, user, password)
 try:
 
   hosts = server.get_hosts()
@@ -46,9 +47,10 @@ try:
         print v
     print ' ]}'
 
-  if mode == 'data':
+  if mode == 'time':
+    #output time difference in zabbix_sender format:
     #<hostname> <key> <timestamp> <value>
-    #vc-cloud.corp.tensor.ru vmware.host.timediff[host-1249] 1373876039 -1
+    #vcenter vmware.host.timediff[host-1249] 1373876039 -1
         
     for x in server._get_object_properties_bulk( hosts.keys(), {'HostSystem':['configManager.dateTimeSystem']} ) :
       host_id = x.Obj
@@ -66,13 +68,52 @@ try:
         res = server._proxy.QueryDateTime(dtReqClass)._returnval #get remote ESXi host time as time.struct_time tuple
         host_time = int(time.mktime(res))
         time_diff = host_time - timestamp #time difference in seconds between ESXi host and system running this script
-        #print host_id, host_name, time_diff
-        print '%s vmware.host.timediff[%s] %d %s' % (vcenter, host_id, timestamp, time_diff)
-      except ZSI_FaultException as e: ##Exception raised for unavailable hosts, skip to prevent log trashing
+
+        #<hostname> <key> <timestamp> <value>
+        print '%s vmware.host.timediff[%s] %d %s' % (vcenter_host, host_id, timestamp, time_diff)
+        
+      except ZSI_FaultException as e: ##Exceptions raise for unavailable hosts, skip to prevent log trashing
         pass
       except Exception as e:
         print >> sys.stderr, "Exception %s.%s: %s" % ( type(e).__module__, type(e).__name__, e )
         pass
 
+  if mode == 'status':
+    #output host status in zabbix_sender format: <hostname> <key> <timestamp> <value>
+    #
+    # Host status items from VMWare vSphere API:
+    # host.summary.overallStatus = { gray | green | red | yellow } (ManagedEntityStatus)
+    # host.runtimeinfo.connectionState = { connected | disconnected | notResponding } (HostSystemConnectionState)
+    # host.runtimeinfo.dasHostState.state = { connectedToMaster | election | fdmUnreachable | hostDown | initializationError | master | networkIsolated | networkPartitionedFromMaster | uninitializationError | uninitialized } (ClusterDasFdmAvailabilityState)
+    # host.runtimeinfo.inMaintenanceMode = { true | false }
+
+    hostItems = {
+      'summary.overallStatus':'status',
+      'runtime.inMaintenanceMode':'maintenance_mode',
+      'runtime.connectionState': 'connection_state',
+      'runtime.dasHostState.state': 'ha_state'
+      }
+        
+    for x in server._get_object_properties_bulk( hosts.keys(), {'HostSystem' : hostItems.keys()} ) :
+      host_id = x.Obj
+      host_name = hosts[x.Obj]
+      timestamp = int(time.time())
+
+      '''
+      for i in x.PropSet:
+        item_label = hostItems[i.Name]
+        item_value = i.Val
+        #<hostname> <key> <timestamp> <value>
+        print '%s vmware.host.%s[%s] %d %s' % (vcenter_host, item_label, host_id, timestamp, item_value)
+      '''
+      
+      #DEBUG
+      print host_name,
+      for i in x.PropSet:
+        item_label = hostItems[i.Name]
+        item_value = i.Val
+        print '%s=%s' % (item_label, item_value),
+      print
+            
 finally:
   server.disconnect()
