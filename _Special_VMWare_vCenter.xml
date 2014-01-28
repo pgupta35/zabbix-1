@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2013-07-15T09:51:00Z</date>
+    <date>2014-01-28T05:24:48Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -18,10 +18,56 @@
             </groups>
             <applications>
                 <application>
+                    <name>VMWare Datastores</name>
+                </application>
+                <application>
                     <name>VMWare vSphere</name>
                 </application>
             </applications>
-            <items/>
+            <items>
+                <item>
+                    <name>_host status poller</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>vmw_host_mon[&quot;{HOST.HOST}&quot;,&quot;{HOST.DNS}&quot;,&quot;status&quot;]</key>
+                    <delay>30</delay>
+                    <history>1</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>1</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Служебный итем для запуска скрипта опроса состояния хостов VMWare - vmw_host_mon с параметром &quot;status&quot;</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>VMWare vSphere</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+            </items>
             <discovery_rules>
                 <discovery_rule>
                     <name>Datastore</name>
@@ -32,9 +78,12 @@
                     <delay>600</delay>
                     <status>0</status>
                     <allowed_hosts/>
+                    <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
                     <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
                     <delay_flex/>
                     <params/>
@@ -57,16 +106,19 @@
                             <snmp_oid/>
                             <key>vmware.ds.capacity[{#ID}]</key>
                             <delay>0</delay>
-                            <history>90</history>
+                            <history>30</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts>127.0.0.1</allowed_hosts>
                             <units>B</units>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -82,6 +134,9 @@
                             <description/>
                             <inventory_link>0</inventory_link>
                             <applications>
+                                <application>
+                                    <name>VMWare Datastores</name>
+                                </application>
                                 <application>
                                     <name>VMWare vSphere</name>
                                 </application>
@@ -96,16 +151,19 @@
                             <snmp_oid/>
                             <key>vmware.ds.free[{#ID}]</key>
                             <delay>0</delay>
-                            <history>90</history>
+                            <history>30</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts>127.0.0.1</allowed_hosts>
                             <units>B</units>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -122,7 +180,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>VMWare vSphere</name>
+                                    <name>VMWare Datastores</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -158,19 +216,23 @@
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
+                    <host_prototypes/>
                 </discovery_rule>
                 <discovery_rule>
                     <name>Hosts</name>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>vmw_host_mon[&quot;{HOST.HOST}&quot;,&quot;discovery&quot;]</key>
-                    <delay>30</delay>
+                    <key>vmw_host_mon[&quot;{HOST.HOST}&quot;,&quot;{HOST.DNS}&quot;,&quot;discovery&quot;]</key>
+                    <delay>60</delay>
                     <status>0</status>
                     <allowed_hosts/>
+                    <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
                     <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
                     <delay_flex/>
                     <params/>
@@ -186,23 +248,152 @@
                     <description>Обнаружение хостов VMWare ESXi</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>vmware.host.{#NAME}.timediff</name>
+                            <name>Host {#NAME} - Connection state</name>
+                            <type>2</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>vmware.host.connection_state[{#ID}]</key>
+                            <delay>0</delay>
+                            <history>1</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts>127.0.0.1</allowed_hosts>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>host.runtimeinfo.connectionState = { connected | disconnected | notResponding } (HostSystemConnectionState)</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>VMWare vSphere</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Host {#NAME} - Maintenance mode</name>
+                            <type>2</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>vmware.host.maintenance_mode[{#ID}]</key>
+                            <delay>0</delay>
+                            <history>1</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts>127.0.0.1</allowed_hosts>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>host.runtimeinfo.inMaintenanceMode = { True | False }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>VMWare vSphere</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Host {#NAME} - Status</name>
+                            <type>2</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>vmware.host.status[{#ID}]</key>
+                            <delay>0</delay>
+                            <history>1</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts>127.0.0.1</allowed_hosts>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>host.summary.overallStatus = { gray | green | red | yellow } (ManagedEntityStatus)</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>VMWare vSphere</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Host {#NAME} - Time difference</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>vmware.host.timediff[{#ID}]</key>
                             <delay>0</delay>
-                            <history>1</history>
+                            <history>3</history>
                             <trends>90</trends>
                             <status>0</status>
                             <value_type>0</value_type>
                             <allowed_hosts>127.0.0.1</allowed_hosts>
                             <units>s</units>
                             <delta>0</delta>
+                            <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
                             <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
@@ -227,8 +418,44 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{_Special_VMWare_vCenter:vmware.host.timediff[{#ID}].last(0)}&gt;5 | {_Special_VMWare_vCenter:vmware.host.timediff[{#ID}].last(0)}&lt;-5</expression>
-                            <name>Host {#NAME}: Time lag {ITEM.LASTVALUE1}</name>
+                            <expression>{_Special_VMWare_vCenter:vmware.host.connection_state[{#ID}].regexp(^connected$)}=0 &amp; {_Special_VMWare_vCenter:vmware.host.maintenance_mode[{#ID}].regexp(^False$)}=1</expression>
+                            <name>Host {#NAME}: ({ITEM.VALUE1})</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description>(connection_state != connected) &amp;&amp; (maintenance_mode == false) -&gt; красный триггер (хост недоступен по сети)</description>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{_Special_VMWare_vCenter:vmware.host.connection_state[{#ID}].regexp(^connected$)}=0 &amp; {_Special_VMWare_vCenter:vmware.host.maintenance_mode[{#ID}].regexp(^True$)}=1</expression>
+                            <name>Host {#NAME}: ({ITEM.VALUE1}), in maintenance</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description>(connection_state != connected) &amp;&amp; (maintenance_mode == true) -&gt; желтый триггер (уведомление, хост в обслуживании)</description>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{_Special_VMWare_vCenter:vmware.host.connection_state[{#ID}].regexp(^connected$)}=1 &amp; {_Special_VMWare_vCenter:vmware.host.maintenance_mode[{#ID}].regexp(^False$)}=1 &amp; {_Special_VMWare_vCenter:vmware.host.status[{#ID}].regexp(^yellow$)}=1</expression>
+                            <name>Host {#NAME}: ({ITEM.VALUE1}), Status: {ITEM.VALUE3}</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>2</priority>
+                            <description>(connection_state == connected) &amp;&amp; (maintenance_mode == false) &amp;&amp; (status in (red, yellow)) -&gt; оранжевый триггер (общее предупреждение, хост работает)</description>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{_Special_VMWare_vCenter:vmware.host.connection_state[{#ID}].regexp(^connected$)}=1 &amp; {_Special_VMWare_vCenter:vmware.host.maintenance_mode[{#ID}].regexp(^False$)}=1 &amp; {_Special_VMWare_vCenter:vmware.host.status[{#ID}].regexp(^red$)}=1</expression>
+                            <name>Host {#NAME}: ({ITEM.VALUE1}), Status: {ITEM.VALUE3}</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description>(connection_state == connected) &amp;&amp; (maintenance_mode == false) &amp;&amp; (status in (red, yellow)) -&gt; оранжевый триггер (общее предупреждение, хост работает)</description>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{_Special_VMWare_vCenter:vmware.host.timediff[{#ID}].avg(#3)}&gt;5 | {_Special_VMWare_vCenter:vmware.host.timediff[{#ID}].avg(#3)}&lt;-5</expression>
+                            <name>Host {#NAME}: Time lag {ITEM.VALUE1}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -237,6 +464,7 @@
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
+                    <host_prototypes/>
                 </discovery_rule>
             </discovery_rules>
             <macros>

@@ -85,7 +85,7 @@ try:
     # host.summary.overallStatus = { gray | green | red | yellow } (ManagedEntityStatus)
     # host.runtimeinfo.connectionState = { connected | disconnected | notResponding } (HostSystemConnectionState)
     # host.runtimeinfo.dasHostState.state = { connectedToMaster | election | fdmUnreachable | hostDown | initializationError | master | networkIsolated | networkPartitionedFromMaster | uninitializationError | uninitialized } (ClusterDasFdmAvailabilityState)
-    # host.runtimeinfo.inMaintenanceMode = { true | false }
+    # host.runtimeinfo.inMaintenanceMode = { True | False }
 
     hostItems = {
       'summary.overallStatus':'status',
@@ -99,14 +99,13 @@ try:
       host_name = hosts[x.Obj]
       timestamp = int(time.time())
 
-      '''
       for i in x.PropSet:
         item_label = hostItems[i.Name]
         item_value = i.Val
         #<hostname> <key> <timestamp> <value>
         print '%s vmware.host.%s[%s] %d %s' % (vcenter_host, item_label, host_id, timestamp, item_value)
+
       '''
-      
       #DEBUG
       print host_name,
       for i in x.PropSet:
@@ -114,6 +113,6 @@ try:
         item_value = i.Val
         print '%s=%s' % (item_label, item_value),
       print
-            
+      '''      
 finally:
   server.disconnect()

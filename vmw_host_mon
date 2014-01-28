@@ -2,17 +2,20 @@
 #
 # VMWare vSphere host monitoring with Zabbix
 #
-# 2013 Matvey Marinin
+# 2013 - 2014 Matvey Marinin
 #
 # Usage:
 #   1) define discovery rule with key vmw_host_mon["{HOST.HOST}"]
 #   2) define prototype items with keys vmware.host.timediff[{#ID}]
 #
 # Parameters:
-#   $1 = vcenter name
-#   $2 = operation mode <discovery|data>
+#   $1 = vCenter host name in Zabbix
+#   $2 = vCenter DNS name/IP address
+#   $3 = operation mode: one of <discovery|time|status>
+#        discovery - VMWare host LLD data
+#        time - VMWare host time difference data
+#        status - VMWare host operational status
 #
-
 set -e
 
 . /etc/zabbix/externalscripts/vmw_mon.conf
@@ -20,11 +23,11 @@ set -e
 ERR_LOG=/var/cache/zabbix/vmw_host_mon
 
 START_TIME=$(date)
-if [[ $2 == 'discovery' ]]; then
-  /usr/bin/python /etc/zabbix/externalscripts/vmw_host_mon.py "$1" "$VC_USER" "$VC_PWD" discovery 2>>"$ERR_LOG"
+if [[ $3 == 'discovery' ]]; then
+  /usr/bin/python /etc/zabbix/externalscripts/vmw_host_mon.py "$1" "$2" "$VC_USER" "$VC_PWD" "$3" 2>>"$ERR_LOG"
 fi
 
-if [[ $2 == 'data' ]]; then
-  /usr/bin/python /etc/zabbix/externalscripts/vmw_host_mon.py "$1" "$VC_USER" "$VC_PWD" data 2>>"$ERR_LOG" | zabbix_sender -z 127.0.0.1 -I 127.0.0.1 -T -i - -v >>"$ERR_LOG" 2>&1
+if [[ $3 == 'time' || $3 == 'status' ]]; then
+  /usr/bin/python /etc/zabbix/externalscripts/vmw_host_mon.py "$1" "$2" "$VC_USER" "$VC_PWD" "$3" 2>>"$ERR_LOG" | zabbix_sender -z 127.0.0.1 -I 127.0.0.1 -T -i - -v >>"$ERR_LOG" 2>&1
 fi
-echo "$1" "$2" "$START_TIME" - `date` >> "$ERR_LOG"
+echo "$1" "$3" "$START_TIME" - `date` >> "$ERR_LOG"
