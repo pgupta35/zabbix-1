@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-01-28T05:24:48Z</date>
+    <date>2014-02-11T12:31:13Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -192,7 +192,7 @@
                             <name>Datastore {#NAME}: Free space &lt; $1 ({ITEM.LASTVALUE1} left)</name>
                             <url/>
                             <status>0</status>
-                            <priority>4</priority>
+                            <priority>3</priority>
                             <description>Мало свободного места в vStorage</description>
                             <type>0</type>
                         </trigger_prototype>
@@ -201,7 +201,7 @@
                             <name>Datastore {#NAME}: Free space &lt; $1 ({ITEM.LASTVALUE1} left)</name>
                             <url/>
                             <status>0</status>
-                            <priority>5</priority>
+                            <priority>4</priority>
                             <description>Нет свободного места в vStorage</description>
                             <type>0</type>
                         </trigger_prototype>
@@ -210,7 +210,7 @@
                             <name>Datastore {#NAME}: Free space &lt; $2%</name>
                             <url/>
                             <status>0</status>
-                            <priority>3</priority>
+                            <priority>2</priority>
                             <description/>
                             <type>0</type>
                         </trigger_prototype>
