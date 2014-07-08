@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# XIV failed component monitoring
+#
+# Matvey Marinin 2014
+#
+#
+# Arguments:
+# $1 - XIV DNS name/IP address
+#
+# Requirements:
+#   Oracle/Sun JRE (jre-7u55-linux-x64.rpm)
+#   XCLI (xivGUI-4.3.1-build1-linux64.bin)
+#
+
+/opt/ibm/xiv/xcli -m "$1" component_service_required_list | tail -n+2 | awk '{print $1, $2}'
