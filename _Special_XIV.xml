@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-07-08T05:18:12Z</date>
+    <date>2014-07-16T10:27:35Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -486,30 +486,21 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{_Special_XIV:xiv.pool.hard_size.pct[{#ID}].avg(15m)}&gt;90</expression>
-                            <name>{HOST.NAME}: Pool {#NAME}: Critical usage ({ITEM.VALUE1})</name>
-                            <url/>
-                            <status>0</status>
-                            <priority>4</priority>
-                            <description/>
-                            <type>0</type>
-                        </trigger_prototype>
-                        <trigger_prototype>
-                            <expression>{_Special_XIV:xiv.pool.hard_size.pct[{#ID}].avg(15m)}&gt;85 &amp; {_Special_XIV:xiv.pool.hard_size.pct[{#ID}].avg(15m)}&lt;91</expression>
+                            <expression>{_Special_XIV:xiv.pool.hard_size.pct[{#ID}].avg(15m)}&gt;90  &amp; {_Special_XIV:xiv.pool.hard_size[{#ID}].avg(15m)}&lt;20T</expression>
                             <name>{HOST.NAME}: Pool {#NAME}: High usage ({ITEM.VALUE1})</name>
                             <url/>
                             <status>0</status>
-                            <priority>3</priority>
-                            <description/>
+                            <priority>4</priority>
+                            <description>(poolfree &lt; poolsize*0.1) &amp; (poolsize*0.1 &lt; 2T)</description>
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{_Special_XIV:xiv.pool.hard_size.left[{#ID}].avg(15m)}&lt;2T</expression>
+                            <expression>{_Special_XIV:xiv.pool.hard_size.left[{#ID}].avg(15m)}&lt;2T &amp; {_Special_XIV:xiv.pool.hard_size[{#ID}].avg(15m)}&gt;20T</expression>
                             <name>{HOST.NAME}: Pool {#NAME}: {ITEM.VALUE1} free</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
-                            <description/>
+                            <description>(poolfree &lt; 2T) &amp; (poolsize*0.1 &gt; 2T)</description>
                             <type>0</type>
                         </trigger_prototype>
                     </trigger_prototypes>
