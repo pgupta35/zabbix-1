@@ -1,0 +1,14 @@
+Defaults:zabbix !requiretty,!syslog
+zabbix ALL=NOPASSWD:/sbin/ethtool
+zabbix ALL=NOPASSWD:/usr/sbin/ethtool
+zabbix ALL=NOPASSWD:/etc/zabbix/scripts/raid/cfggen
+zabbix ALL=NOPASSWD:/etc/zabbix/scripts/raid/CmdTool2
+zabbix ALL=NOPASSWD:/etc/zabbix/scripts/raid/MegaCli
+zabbix ALL=NOPASSWD:/etc/zabbix/scripts/raid/MegaCli64
+zabbix ALL=NOPASSWD:/sbin/dmraid
+zabbix ALL=NOPASSWD:/bin/df
+zabbix ALL=(postgres)NOPASSWD:/usr/bin/psql
+postgres ALL=NOPASSWD:/bin/mount
+zabbix ALL=NOPASSWD:/sbin/pvs
+zabbix ALL=(postgres)NOPASSWD:/etc/zabbix/scripts/pg.tmp.sh
+zabbix ALL=(postgres)NOPASSWD:/etc/zabbix/scripts/pg.xlog.ready.sh

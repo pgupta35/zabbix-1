@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-07-16T10:27:35Z</date>
+    <date>2014-10-24T12:58:20Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -63,6 +63,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Failed disk count</name>
@@ -105,6 +106,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Status</name>
@@ -147,6 +149,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>XIV Hard size</name>
@@ -189,6 +192,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>XIV Hard space free</name>
@@ -231,6 +235,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>XIV Hard usage</name>
@@ -273,6 +278,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>xiv_mon_getdata</name>
@@ -281,7 +287,7 @@
                     <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>xiv_mon[&quot;{HOST.HOST}&quot;,&quot;{HOST.CONN}&quot;,&quot;data&quot;]</key>
-                    <delay>1200</delay>
+                    <delay>180</delay>
                     <history>1</history>
                     <trends>2</trends>
                     <status>0</status>
@@ -316,11 +322,142 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
             </items>
             <discovery_rules>
                 <discovery_rule>
-                    <name>XIV pools</name>
+                    <name>XIV snapshot pools</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>xiv_mon[&quot;{HOST.HOST}&quot;,&quot;{HOST.CONN}&quot;,&quot;snap_discovery&quot;]</key>
+                    <delay>60</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>:</filter>
+                    <lifetime>0</lifetime>
+                    <description/>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Snapshot pool &quot;{#NAME}&quot;: Pct free</name>
+                            <type>2</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>xiv.pool.snap.space_pctleft[{#ID}]</key>
+                            <delay>0</delay>
+                            <history>1</history>
+                            <trends>180</trends>
+                            <status>0</status>
+                            <value_type>0</value_type>
+                            <allowed_hosts/>
+                            <units>%</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>XIV</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Snapshot pool &quot;{#NAME}&quot;: Space free</name>
+                            <type>2</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>xiv.pool.snap.space_left[{#ID}]</key>
+                            <delay>0</delay>
+                            <history>1</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>b</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>XIV</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{_Special_XIV:xiv.pool.snap.space_pctleft[{#ID}].avg(#3)}&lt;20</expression>
+                            <name>{HOST.NAME}: Snapshot pool &quot;{#NAME}&quot;: {ITEM.VALUE1} free</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>XIV volume pools</name>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -349,7 +486,7 @@
                     <description/>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Pool {#NAME}: Hard size</name>
+                            <name>Pool &quot;{#NAME}&quot;: Hard size</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -389,9 +526,10 @@
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Pool {#NAME}: Hard space free</name>
+                            <name>Pool &quot;{#NAME}&quot;: Hard space free</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -431,9 +569,10 @@
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Pool {#NAME}: Hard usage</name>
+                            <name>Pool &quot;{#NAME}&quot;: Hard usage</name>
                             <type>2</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -473,6 +612,7 @@
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
@@ -487,7 +627,7 @@
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{_Special_XIV:xiv.pool.hard_size.pct[{#ID}].avg(15m)}&gt;90  &amp; {_Special_XIV:xiv.pool.hard_size[{#ID}].avg(15m)}&lt;20T</expression>
-                            <name>{HOST.NAME}: Pool {#NAME}: High usage ({ITEM.VALUE1})</name>
+                            <name>{HOST.NAME}: Pool &quot;{#NAME}&quot;: High usage ({ITEM.VALUE1})</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
@@ -496,7 +636,7 @@
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{_Special_XIV:xiv.pool.hard_size.left[{#ID}].avg(15m)}&lt;2T &amp; {_Special_XIV:xiv.pool.hard_size[{#ID}].avg(15m)}&gt;20T</expression>
-                            <name>{HOST.NAME}: Pool {#NAME}: {ITEM.VALUE1} free</name>
+                            <name>{HOST.NAME}: Pool &quot;{#NAME}&quot;: {ITEM.VALUE1} free</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
@@ -542,12 +682,7 @@
             <priority>3</priority>
             <description>Высокий процент использования дискового пространства на XIV</description>
             <type>0</type>
-            <dependencies>
-                <dependency>
-                    <name>{HOST.NAME}: Critical space usage ({ITEM.VALUE1})</name>
-                    <expression>{_Special_XIV:xiv.pool.total_hard_size_pct.avg(15m)}&gt;95</expression>
-                </dependency>
-            </dependencies>
+            <dependencies/>
         </trigger>
         <trigger>
             <expression>{_Special_XIV:xiv.pool.total_hard_size_left.avg(15m)}&lt;2T</expression>
